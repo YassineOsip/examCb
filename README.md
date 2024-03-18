@@ -46,5 +46,5 @@
    ```
 2. **Test:**
    ```bash
-   Usage: ./a.out [grademe | <function_name>]
+   Usage: ./test_program [grademe | <function_name>]
    ```

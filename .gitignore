@@ -2,3 +2,4 @@
 solutions.c
 test
 a.out
+*.o
