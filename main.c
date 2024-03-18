@@ -25,13 +25,13 @@ int main(int argc, char *argv[])
         {
             func_add = add;
         }
-        else if (strcmp(function_name, "reverse_string") == 0)
-        {
-            func_reverse = reverse_string;
-        }
         else if (strcmp(function_name, "find_max") == 0)
         {
             func_max = find_max;
+        }
+        else if (strcmp(function_name, "reverse_string") == 0)
+        {
+            func_reverse = reverse_string;
         }
         else if (strcmp(function_name, "is_prime") == 0)
         {
@@ -53,11 +53,11 @@ int main(int argc, char *argv[])
         if (!func_add)
             printf("add: Function not defined\n");
         func_reverse = reverse_string;
+        if (!func_max)
+            printf("find_max: Function not defined\n");
         if (!func_reverse)
             printf("reverse_string: Function not defined\n");
         func_max = find_max;
-        if (!func_max)
-            printf("find_max: Function not defined\n");
         func_prime = is_prime;
         if (!func_prime)
             printf("is_prime: Function not defined\n");
@@ -76,16 +76,6 @@ int main(int argc, char *argv[])
         final_grade += 4;
       printf("%s: %s\n", function_name, (tests_passed == 3) ? "Passed" : "Failed");
     }
-    if (func_reverse)
-    {
-      int tests_passed = 0;
-      tests_passed += (strcmp(func_reverse("hello"), "olleh") == 0);
-      tests_passed += (strcmp(func_reverse("madam"), "madam") == 0);
-      tests_passed += (strcmp(func_reverse("racecar"), "racecar") == 0);
-      if (grade_mode && tests_passed == 3)
-        final_grade += 4;
-      printf("%s: %s\n", function_name, (tests_passed == 3) ? "Passed" : "Failed");
-    }
     if (func_max)
     {
         int tests_passed = 0;
@@ -96,6 +86,16 @@ int main(int argc, char *argv[])
             final_grade += 4;
         printf("%s: %s\n", function_name, (tests_passed == 3) ? "Passed" : "Failed");
         
+    }
+    if (func_reverse)
+    {
+      int tests_passed = 0;
+      tests_passed += (strcmp(func_reverse("hello"), "olleh") == 0);
+      tests_passed += (strcmp(func_reverse("madam"), "madam") == 0);
+      tests_passed += (strcmp(func_reverse("racecar"), "racecar") == 0);
+      if (grade_mode && tests_passed == 3)
+        final_grade += 4;
+      printf("%s: %s\n", function_name, (tests_passed == 3) ? "Passed" : "Failed");
     }
     if (func_prime)
     {
